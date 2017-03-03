@@ -16,6 +16,6 @@ public class WizzAirAutomationFramework {
 
     @Test
     public void openPage() {
-        testsFramework.xxx();
+        testsFramework.findFlight();
     }
 }

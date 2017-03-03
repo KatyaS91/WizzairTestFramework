@@ -17,9 +17,10 @@ public class TestsFramework {
         driver.quit();
     }
 
-    public void xxx() {
+    public void findFlight() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openPage();
+        mainPage.createNewRoad("Vilnius", "Paris Beauvais", "13 Apr 2017", "13 Apr 2017");
     }
 
 }

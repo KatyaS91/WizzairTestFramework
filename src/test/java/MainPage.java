@@ -3,6 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by Katsiaryna_Skarzhyns on 3/2/2017.
  */
@@ -16,10 +18,10 @@ public class MainPage extends AbstractPage{
     @FindBy(id = "search-arrival-station")
     private WebElement inputDestinationName;
 
-    @FindBy (id = "search-departure-date")
+    @FindBy(xpath = "//*[@id=\"search-departure-date\"]")
     private WebElement departureDateName;
 
-    @FindBy(id = "search-return-date")
+    @FindBy(xpath = "//*[@id=\"search-return-date\"]")
     private WebElement returnDateName;
 
     @FindBy(xpath = "//*[@id=\"flight-search\"]/div/div/div/form/div[2]/button")
@@ -40,13 +42,11 @@ public class MainPage extends AbstractPage{
     }
 
     public SearchResult createNewRoad(String origin, String destination, String departureDate, String returnDate){
-        inputOriginName.sendKeys(origin);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         inputDestinationName.sendKeys(destination);
-        departureDateName.sendKeys(departureDate); // пока не ясно как дату передать
-        returnDateName.sendKeys(returnDate); //  возможно нужно написать метод отдельный, или хардкодом значение подходящего формата
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         searchButton.click();
-        // заглушка, пока в сигнатуре написано что возвращаеит стринг, по факту должно возвращать объект другого пайдж обджекта
-        return null;
+        return new SearchResult(driver);
     }
 
     public void signIn(){
