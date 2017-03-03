@@ -20,7 +20,7 @@ public class TestsFramework {
     public void findFlight() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openPage();
-        mainPage.createNewRoad("Vilnius", "Paris Beauvais", "13 Apr 2017", "13 Apr 2017");
+        mainPage.createNewRoad("Riga", "Tel-Aviv", "13 Apr 2017", "13 Apr 2017");
     }
 
 }

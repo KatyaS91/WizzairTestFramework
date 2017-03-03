@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,8 +15,6 @@ public class DriverSingleton {
 
     private DriverSingleton() {
     }
-
-    ;
 
     public static WebDriver getDriver() {
         if (null == driver) {
@@ -32,4 +31,6 @@ public class DriverSingleton {
         driver.quit();
         driver = null;
     }
+
+    public static WebDriverWait waiter = new WebDriverWait(driver, 5, 1000);
 }

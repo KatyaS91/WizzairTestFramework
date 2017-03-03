@@ -42,9 +42,11 @@ public class MainPage extends AbstractPage{
     }
 
     public SearchResult createNewRoad(String origin, String destination, String departureDate, String returnDate){
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        inputOriginName.click();
+        inputOriginName.clear();
+        inputOriginName.sendKeys(origin);
+        inputDestinationName.click();
         inputDestinationName.sendKeys(destination);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         searchButton.click();
         return new SearchResult(driver);
     }
