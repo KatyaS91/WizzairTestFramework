@@ -28,6 +28,7 @@ public class SearchResult extends AbstractPage {
 
     public PassangerPage continueChecking(){
         continueButton.click();
+        return null;
     }
 
     @Override

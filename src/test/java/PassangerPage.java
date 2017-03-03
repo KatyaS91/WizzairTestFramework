@@ -9,7 +9,7 @@ public class PassangerPage extends AbstractPage {
 
     private final String BASE_URL = "https://wizzair.com/en-gb/main-page#/booking/select-flight";
 
-    @FindBy
+    // @FindBy
 
     public PassangerPage(WebDriver driver){
         super(driver);
