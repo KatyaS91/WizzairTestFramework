@@ -9,7 +9,7 @@ public class TestsFramework {
 
     private WebDriver driver;
 
-    private void initBrowser() {
+    public void initBrowser() {
         driver = DriverSingleton.getDriver();
     }
 
